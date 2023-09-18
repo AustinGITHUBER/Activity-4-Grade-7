@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Plum n Cherry - Rose Family</title>
+    </head>
+    <body style='background-color: rgb(153, 255, 153); font-size: 200%;'>
+        <noscript style='color: #F00;'>bruh</noscript>
+        <div style='background-image: radial-gradient(#FFF, #9F9 200%); position: absolute; top: 50%; transform: translate(0, -50%); z-index: -1;' id='container'>
+            <h3>Rose Family</h3>
+            <ol style='list-style-type: upper-alpha;'>
+                <li>Rose</li>
+                <li>Apple</li>
+                <li>Pear</li>
+                <li>Peach</li>
+                <li>Plum</li>
+            </ol>
+            <dl>
+                <dt>Plum</dt>
+                <dd>Plum (tree), fruit tree of a genus of the rose family, which also contains the other trees that produce drupes (hard-pitted fruits): peach, cherry, almond, and apricot. About 12 plum species are cultivated throughout temperate regions for their fruit and as flowering ornamentals.</dd>
+                <dt>Cherry</dt>
+                <dd>Cherry, common name for several related trees, and for the edible fruit of some species. The ancestors of the most modern cultivated varieties of cherry are probably the sweet or dessert, cherry (Prunus avium), and the sour, or pie, cherry (Prunus cerasus). The sweet cherry attains a height of up to 15m (up to 50ft) and has drooping leaves, with small, austere fruit. The sour cherry is smaller and has more juicy fruit. Both trees have white flowers, and both are generally regarded as natives of central and southern Europe.</dd>
+            </dl>
+            <div>The family also includes</div>
+            <ul style='list-style-type: square;'>
+                <li>Apricot</li>
+                <li>Raspberry</li>
+                <li>Blackberry</li>
+                <li>Strawberry</li>
+            </ul>
+        </div>
+        <script>
+            setInterval(() => {
+                document.body.style.backgroundColor = `rgb(${document.body.style.backgroundColor.slice(4, -1).split(',').map(parseFloat).map((elem, i) => {
+                    elem += i + Math.random()
+                    if (elem > 127.5) elem %= 255
+                    return elem
+                }).join(', ')})`
+                document.querySelector('#container').style.backgroundImage = `radial-gradient(#FFF, ${document.body.style.backgroundColor} 200%)`
+            }, 50)
+        </script>
+    </body>
+</html>
